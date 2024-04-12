@@ -13,9 +13,7 @@ function extractConversations() {
         : "Unknown";
 
       // Encoder le conversation_id pour le format attendu
-      const endpoint =
-        encodeURIComponent(conversationId) +
-        "_63bcb120-44a8-433f-b1c4-9f4708877389%40unq.gbl.spaces";
+      const endpoint = encodeURIComponent(conversationId);
 
       return {
         name,
