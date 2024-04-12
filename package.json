@@ -1,0 +1,12 @@
+{
+  "name": "proxeams",
+  "version": "1.0.0",
+  "description": "Teams proxy allowing sending headless messages :-)",
+  "main": "interceptor.js",
+  "scripts": {
+    "test": "node ./src/requester.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
