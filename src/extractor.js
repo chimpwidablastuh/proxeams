@@ -1,7 +1,8 @@
 function extractConversations() {
   const chatItems = document.querySelectorAll('div[id*="chat-list-item"]');
 
-  const seenIds = new Set(); // Un ensemble pour suivre les conversation_id déjà traités
+  const seenIds = new Set();
+
   const conversations = Array.from(chatItems)
     .map((item) => {
       const nameElement = item.querySelector('[dir="auto"]');
@@ -12,7 +13,6 @@ function extractConversations() {
         ? conversationIdMatch[1]
         : "Unknown";
 
-      // Encoder le conversation_id pour le format attendu
       const endpoint = encodeURIComponent(conversationId);
 
       return {
@@ -22,22 +22,20 @@ function extractConversations() {
       };
     })
     .filter((conv) => {
-      // Vérifier si le name est de type "At hh:mm" ou "On jj/mm" en utilisant une expression régulière
       const timePattern = /^At \d{2}:\d{2}$|^On \d{2}\/\d{2}$/;
-      if (timePattern.test(conv.name)) {
-        return false; // Exclure de la liste finale
-      }
 
-      if (seenIds.has(conv.conversation_id)) {
-        return false; // Exclure les doublons
-      }
+      if (timePattern.test(conv.name)) return false;
 
-      seenIds.add(conv.conversation_id); // Ajouter l'ID à l'ensemble des vus
-      return true; // Inclure dans la liste finale
+      if (seenIds.has(conv.conversation_id)) return false;
+
+      seenIds.add(conv.conversation_id);
+
+      return true;
     });
 
   return conversations;
 }
 
 const conversations = extractConversations();
+
 console.log(conversations);

@@ -8,5 +8,10 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "keytar": "^7.9.0",
+    "puppeteer": "^22.6.4",
+    "sqlite3": "^5.1.7"
+  }
 }

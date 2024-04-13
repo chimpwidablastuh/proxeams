@@ -22,7 +22,7 @@ const curlSend = (msg) => {
   -H 'clientinfo: os=mac; osVer=10.15.7; proc=x86; lcid=en-gb; deviceType=1; country=gb; clientName=skypeteams; clientVer=1415/24031414717; utcOffset=+02:00; timezone=Europe/Paris' \
   -H 'x-ms-migration: True' \
   -H 'Referer: https://teams.microsoft.com/v2/worker/precompiled-web-worker-3cf84525c0e01642.js' \
-  --data-raw '{"id":"-1","type":"Message","conversationid":"${CONVERSATION_ID}","conversationLink":"blah/${CONVERSATION_ID}","from":"8:orgid:14302edd-afc1-4749-8479-a4904373399a","composetime":"${SEND_DATE}","originalarrivaltime":"${SEND_DATE}","content":"${CONTENT}","messagetype":"RichText/Html","contenttype":"Text","imdisplayname":"Victor MAHE","clientmessageid":"2681384164359539764","callId":"","state":0,"version":"0","amsreferences":[],"properties":{"importance":"","subject":"","title":"","cards":"[]","links":"[]","mentions":"[]","onbehalfof":null,"files":"[]","policyViolation":null},"crossPostChannels":[]}'`;
+  --data-raw '{"id":"-1","type":"Message","conversationid":"${CONVERSATION_ID}","conversationLink":"blah/${CONVERSATION_ID}","from":"8:orgid:14302edd-afc1-4749-8479-a4904373399a","composetime":"${SEND_DATE}","originalarrivaltime":"${SEND_DATE}","content":"${CONTENT}","messagetype":"RichText/Html","contenttype":"Text","imdisplayname":"Victor MAHE","clientmessageid":"${new Date().getTime()}","callId":"","state":0,"version":"0","amsreferences":[],"properties":{"importance":"","subject":"","title":"","cards":"[]","links":"[]","mentions":"[]","onbehalfof":null,"files":"[]","policyViolation":null},"crossPostChannels":[]}'`;
 };
 
 // Prompt user for a message to send
